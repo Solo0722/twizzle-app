@@ -2,7 +2,7 @@
 @import "~antd/dist/antd.less";
 @import "~antd/lib/style/themes/dark.less";
 
-@primary-color: #6f00ff;
+@primary-color: blue;
 
 @font-face {
   font-family: "kantumruy_proregular";
@@ -13,7 +13,41 @@
 }
 
 body {
-  font-family: "kantumruy_proregular", "Roboto","PT-Sans","Roboto";
+  font-family: "Open Sans";
   margin: 0;
   padding: 0;
+  background: #21212b;
+}
+
+.home {
+  background: #181820;
+}
+
+.active {
+  border-right: 2px solid blue;
+  font-weight: bold;
+}
+
+.notActive {
+  opacity: 0.5;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
