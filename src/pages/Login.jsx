@@ -38,7 +38,11 @@ const Login = () => {
       <div style={{ zIndex: "50" }}>
         <LogoContainer>
           <img src="/logo.png" alt="" width={30} height={30} />
-          <h2 style={{ marginLeft: "10px" }}>twizzle</h2>
+          <h1
+            style={{ marginLeft: "10px", color: "#6f2da8", fontWeight: "bold" }}
+          >
+            twizzle
+          </h1>
         </LogoContainer>
         <Button
           type="primary"
