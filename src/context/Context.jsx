@@ -9,9 +9,11 @@ const Context = ({ children }) => {
       : localStorage.clear();
 
   const [user, setUser] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [pins, setPins] = useState(null);
 
   return (
-    <AppContext.Provider value={{ userInfo, user, setUser }}>
+    <AppContext.Provider value={{ userInfo, user, setUser,pins,setPins }}>
       {children}
     </AppContext.Provider>
   );

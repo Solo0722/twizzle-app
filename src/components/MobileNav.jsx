@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const MobileNav = () => {
   const navigate = useNavigate();
   return (
-    <TitleBar>
+    <TitleBar className="mobileNav">
       <div>
         <Drawerbar />
         <h2 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
@@ -26,7 +26,8 @@ const TitleBar = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  backdrop-filter: blur(10px);
+  height: 55px;
+  /* backdrop-filter: blur(10px); */
   position: sticky;
   top: 0;
   z-index: 100;

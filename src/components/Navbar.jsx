@@ -1,14 +1,15 @@
-import {
-  PlusOutlined,
-  PlusSquareFilled,
-  PlusSquareTwoTone,
-  SearchOutlined,
-} from "@ant-design/icons";
+import { PlusOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input, Avatar, Button } from "antd";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../context/Context";
 
 const Navbar = () => {
+  const { user, setSearchTerm, searchTerm } = useContext(AppContext);
+
+  const navigate = useNavigate();
+
   return (
     <NavbarContainer>
       <Input
@@ -16,15 +17,28 @@ const Navbar = () => {
         prefix={<SearchOutlined />}
         style={{
           marginRight: "10px",
+          borderRadius: "5px",
         }}
+        type="text"
+        onChange={(e) => setSearchTerm(e.target.value)}
+        value={searchTerm}
+        onFocus={() => navigate("/search")}
       />
-      <Avatar
-        style={{ marginRight: "10px", cursor: "pointer", background: "blue" }}
-        shape="square"
-      >
-        R
-      </Avatar>
-      <Button icon={<PlusOutlined />} type="primary" href="/create-pin" />
+      {user && (
+        <>
+          <Avatar
+            style={{
+              marginRight: "10px",
+              cursor: "pointer",
+              background: "blue",
+            }}
+            shape="square"
+            src={user?.image}
+            onClick={() => navigate(`/user-profile/${user?._id}`)}
+          />
+          <Button icon={<PlusOutlined />} type="primary" href="/create-pin" />
+        </>
+      )}
     </NavbarContainer>
   );
 };
