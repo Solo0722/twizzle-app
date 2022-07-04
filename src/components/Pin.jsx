@@ -128,7 +128,7 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
                   onClick={(e) => e.stopPropagation()}
                 />
               )}
-              {postedBy?._id === userInfo.uid && (
+              {postedBy?._id === userInfo?.uid && (
                 <Button
                   shape="circle"
                   type="text"
