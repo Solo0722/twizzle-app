@@ -82,13 +82,20 @@ const RenderLinks = ({ onClose }) => {
           ))}
         </List>
       </LinksContainer>
-      {user && (
-        <UserContainer className="userProfile" onClick={() => navigate(`/user-profile/${user._id}`)}>
+      {user ? (
+        <UserContainer
+          className="userProfile"
+          onClick={() => navigate(`/user-profile/${user._id}`)}
+        >
           <div>
             <Avatar src={user?.image} />
             <span style={{ marginLeft: "10px" }}>{user?.userName}</span>
           </div>
         </UserContainer>
+      ) : (
+        <Button href="/login" type="primary">
+          Login / Sign up
+        </Button>
       )}
     </div>
   );
