@@ -8,15 +8,7 @@ import Feed from "./Feed";
 import PinDetail from "./PinDetail";
 import Search from "./Search";
 
-const Pins = () => {
-  const { user } = useContext(AppContext);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
-  }, []);
+const Pins = () => {  
 
   return (
     <div>
