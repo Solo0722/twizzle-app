@@ -1,16 +1,26 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import MobileNav from "../components/MobileNav";
 import Navbar from "../components/Navbar";
+import { AppContext } from "../context/Context";
 import CreatePin from "./CreatePin";
 import Feed from "./Feed";
 import PinDetail from "./PinDetail";
 import Search from "./Search";
 
 const Pins = () => {
+  const { user } = useContext(AppContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div>
-      <MobileNav/>
+      <MobileNav />
       <Navbar />
       <Routes>
         <Route path="/" element={<Feed />} />
