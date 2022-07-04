@@ -11,7 +11,7 @@ const MobileNav = () => {
       <div>
         <Drawerbar />
         <h2 onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
-          twi<span style={{ color: "blue" }}>zzle</span>
+          twi<span style={{ color: "#6f2da8" }}>zzle</span>
         </h2>
       </div>
       <SwitchButton />
@@ -27,7 +27,7 @@ const TitleBar = styled.div`
   align-items: center;
   padding: 10px;
   height: 55px;
-  /* backdrop-filter: blur(10px); */
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 100;

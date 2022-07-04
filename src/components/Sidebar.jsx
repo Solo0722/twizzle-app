@@ -9,7 +9,7 @@ const Sidebar = () => {
       <LogoContainer>
         <div style={{ display: "flex", flexDirection: "row" }}>
           <h2>
-            twi<span style={{ color: "blue" }}>zzle</span>
+            twi<span style={{ color: "#6f2da8" }}>zzle</span>
           </h2>
         </div>
         <SwitchButton />
